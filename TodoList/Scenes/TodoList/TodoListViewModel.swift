@@ -27,8 +27,8 @@ class TodoListViewModel {
         }
     }
     
-    func deleteTask(by id: String) {
+    func deleteTask(by id: String, currentSegment: Priority?) {
         realmManager.delete(_id: id)
-        getTodoListData(by: nil)
+        getTodoListData(by: currentSegment)
     }
 }

@@ -30,6 +30,7 @@ class TodoListCoordinator: BaseCoordinator {
             .subscribe(onNext: { [unowned viewController] state in
                 if state {
                     viewController.spinner.startAnimating()
+                    viewController.segmentedControl.selectedSegmentIndex = 0
                     let priority = Priority(rawValue: viewController.segmentedControl.selectedSegmentIndex)
                     viewController.todoListViewModel.getTodoListData(by: priority)
                 } else {

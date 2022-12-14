@@ -28,7 +28,7 @@ extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            todoListViewModel.deleteTask(by: self.filteredTask[indexPath.row].id)
+            todoListViewModel.deleteTask(by: self.filteredTask[indexPath.row].id, currentSegment: Priority(rawValue: segmentedControl.selectedSegmentIndex))
         default:
             break
         }

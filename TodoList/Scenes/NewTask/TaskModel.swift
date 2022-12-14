@@ -16,4 +16,6 @@ enum Priority: Int {
 struct Task {
     let title: String
     let priority: Priority
+    let date: Date
+    let isDone: Bool
 }

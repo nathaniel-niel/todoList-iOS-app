@@ -14,7 +14,13 @@ class RealmManager {
     let realm = try! Realm()
     
     func write(data: Task) {
-        let todoData = TodoTask(taskName: data.title, priority: data.priority.rawValue)
+        let todoData = TodoTask(
+            taskName: data.title,
+            date: data.date,
+            priority: data.priority.rawValue,
+            isDone: data.isDone
+        )
+        
         try! realm.write({
             realm.add(todoData)
         })
@@ -25,7 +31,9 @@ class RealmManager {
         return task.map { TodoListModel(
             id: $0._id.stringValue,
             title: $0.taskName,
-            priority: Priority(rawValue: $0.priority) ?? .High )
+            date: $0.date,
+            priority: Priority(rawValue: $0.priority) ?? .High,
+            isDone: $0.isDone )
         }
     }
     

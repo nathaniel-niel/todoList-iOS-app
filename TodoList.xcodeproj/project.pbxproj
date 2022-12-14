@@ -20,6 +20,10 @@
 		2D90FCE92949B2CE00FE0054 /* TodoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90FCE82949B2CE00FE0054 /* TodoListViewModel.swift */; };
 		2D90FCEB2949B4D400FE0054 /* NewTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90FCEA2949B4D400FE0054 /* NewTaskViewModel.swift */; };
 		2D90FCED2949E78600FE0054 /* TodoListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90FCEC2949E78600FE0054 /* TodoListModel.swift */; };
+		2D90FCF02949EDE000FE0054 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90FCEF2949EDE000FE0054 /* TaskDetailViewController.swift */; };
+		2D90FCF42949EE0E00FE0054 /* TaskDetailEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90FCF32949EE0E00FE0054 /* TaskDetailEditViewController.swift */; };
+		2D90FCF62949EEAB00FE0054 /* TaskDetailEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90FCF52949EEAB00FE0054 /* TaskDetailEditViewModel.swift */; };
+		2D90FCF82949EEC000FE0054 /* TaskDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90FCF72949EEC000FE0054 /* TaskDetailViewModel.swift */; };
 		D750D3C002E2ED7761B0063F /* Pods_TodoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11C35B5FDD1F897AC8B7DEC /* Pods_TodoList.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +45,10 @@
 		2D90FCE82949B2CE00FE0054 /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModel.swift; sourceTree = "<group>"; };
 		2D90FCEA2949B4D400FE0054 /* NewTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewModel.swift; sourceTree = "<group>"; };
 		2D90FCEC2949E78600FE0054 /* TodoListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListModel.swift; sourceTree = "<group>"; };
+		2D90FCEF2949EDE000FE0054 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		2D90FCF32949EE0E00FE0054 /* TaskDetailEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailEditViewController.swift; sourceTree = "<group>"; };
+		2D90FCF52949EEAB00FE0054 /* TaskDetailEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailEditViewModel.swift; sourceTree = "<group>"; };
+		2D90FCF72949EEC000FE0054 /* TaskDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewModel.swift; sourceTree = "<group>"; };
 		E11C35B5FDD1F897AC8B7DEC /* Pods_TodoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,6 +106,7 @@
 		2D90FCDC2949854600FE0054 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2D90FCEE2949ED9200FE0054 /* TaskDetail */,
 				2D90FCE32949A8A600FE0054 /* RealmManager */,
 				2D90FCDE2949980900FE0054 /* NewTask */,
 				2D90FCDD2949854D00FE0054 /* TodoList */,
@@ -133,6 +142,33 @@
 				2D90FCE62949A91000FE0054 /* RealmLocalRepository.swift */,
 			);
 			path = RealmManager;
+			sourceTree = "<group>";
+		};
+		2D90FCEE2949ED9200FE0054 /* TaskDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2D90FCF22949EDFB00FE0054 /* TaskEditView */,
+				2D90FCF12949EDEA00FE0054 /* TaskDetailView */,
+			);
+			path = TaskDetail;
+			sourceTree = "<group>";
+		};
+		2D90FCF12949EDEA00FE0054 /* TaskDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				2D90FCEF2949EDE000FE0054 /* TaskDetailViewController.swift */,
+				2D90FCF72949EEC000FE0054 /* TaskDetailViewModel.swift */,
+			);
+			path = TaskDetailView;
+			sourceTree = "<group>";
+		};
+		2D90FCF22949EDFB00FE0054 /* TaskEditView */ = {
+			isa = PBXGroup;
+			children = (
+				2D90FCF32949EE0E00FE0054 /* TaskDetailEditViewController.swift */,
+				2D90FCF52949EEAB00FE0054 /* TaskDetailEditViewModel.swift */,
+			);
+			path = TaskEditView;
 			sourceTree = "<group>";
 		};
 		7AE84F802D5EE0D585B777C7 /* Pods */ = {
@@ -269,13 +305,17 @@
 				2D90FCEB2949B4D400FE0054 /* NewTaskViewModel.swift in Sources */,
 				2D90FCE229499C3400FE0054 /* TaskModel.swift in Sources */,
 				2D90FCE72949A91000FE0054 /* RealmLocalRepository.swift in Sources */,
+				2D90FCF42949EE0E00FE0054 /* TaskDetailEditViewController.swift in Sources */,
 				2D90FCDA2949851E00FE0054 /* TodoListViewController+UITableview.swift in Sources */,
 				2D90FCE02949982700FE0054 /* NewTaskViewController.swift in Sources */,
 				2D1360E729488A710036C80B /* TodoListViewController.swift in Sources */,
+				2D90FCF02949EDE000FE0054 /* TaskDetailViewController.swift in Sources */,
+				2D90FCF82949EEC000FE0054 /* TaskDetailViewModel.swift in Sources */,
 				2D1360E329488A710036C80B /* AppDelegate.swift in Sources */,
 				2D90FCE92949B2CE00FE0054 /* TodoListViewModel.swift in Sources */,
 				2D90FCE52949A8DB00FE0054 /* RealmManager.swift in Sources */,
 				2D1360E529488A710036C80B /* SceneDelegate.swift in Sources */,
+				2D90FCF62949EEAB00FE0054 /* TaskDetailEditViewModel.swift in Sources */,
 				2D90FCED2949E78600FE0054 /* TodoListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

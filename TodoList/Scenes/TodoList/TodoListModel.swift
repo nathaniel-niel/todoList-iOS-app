@@ -10,5 +10,7 @@ import Foundation
 struct TodoListModel {
     let id: String
     let title: String
+    let date: Date
     let priority: Priority
+    let isDone: Bool
 }

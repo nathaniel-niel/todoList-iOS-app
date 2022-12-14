@@ -24,4 +24,13 @@ extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            todoListViewModel.deleteTask(by: self.filteredTask[indexPath.row].id)
+        default:
+            break
+        }
+    }
 }

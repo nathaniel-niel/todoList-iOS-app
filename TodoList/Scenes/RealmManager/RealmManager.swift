@@ -20,10 +20,12 @@ class RealmManager {
         })
     }
     
-    func read() -> [Task] {
+    func read() -> [TodoListModel] {
         let task = realm.objects(TodoTask.self)
-        return task.map { item in
-            Task(title: item.taskName, priority: Priority(rawValue: item.priority) ?? .High )
+        return task.map { TodoListModel(
+            id: $0._id.stringValue,
+            title: $0.taskName,
+            priority: Priority(rawValue: $0.priority) ?? .High )
         }
     }
     
@@ -31,7 +33,17 @@ class RealmManager {
         
     }
     
-    func delete(_id: ObjectId) {
+    func delete(_id: String) {
+        // get all data from realm
+        let tasks = realm.objects(TodoTask.self)
         
+        guard let id = try?  ObjectId(string: _id) else {
+            return
+        }
+        
+        let task = tasks.first(where: {$0._id == id})
+        try! realm.write({
+            realm.delete(task!)
+        })
     }
 }

@@ -11,11 +11,11 @@ import RxSwift
 
 class TodoListViewModel {
     
-    var tasksSubject = PublishSubject<[Task]>()
-    var filteredTaskObservable:Observable<[Task]> {
+    var tasksSubject = PublishSubject<[TodoListModel]>()
+    var filteredTaskObservable:Observable<[TodoListModel]> {
         return tasksSubject.asObservable()
     }
-    var filteredTask: [Task] = []
+    var filteredTask: [TodoListModel] = []
     let realmManager = RealmManager()
     
     func getTodoListData(by priority: Priority?) {
@@ -28,4 +28,8 @@ class TodoListViewModel {
         }
     }
     
+    func deleteTask(by id: String) {
+        realmManager.delete(_id: id)
+        getTodoListData(by: nil)
+    }
 }

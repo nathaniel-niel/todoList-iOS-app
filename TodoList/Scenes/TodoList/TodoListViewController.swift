@@ -13,7 +13,7 @@ class TodoListViewController: UIViewController {
     // MARK: - PROPERTIES
     let category: [String] = ["All","High", "Medium", "Low"]
     let disposeBag = DisposeBag()
-    var filteredTask: [Task] = []
+    var filteredTask: [TodoListModel] = []
     let todoListViewModel = TodoListViewModel()
     
     // MARK: - UI COMPONENTS
@@ -54,16 +54,6 @@ class TodoListViewController: UIViewController {
         
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        filteredTask.removeAll()
-//        DispatchQueue.main.async {
-//            self.updateTableView()
-//        }
-//        
-//        
-//        
-//    }
-//    
     private func bindData() {
         spinner.startAnimating()
         todoListViewModel.filteredTaskObservable

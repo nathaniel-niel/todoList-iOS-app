@@ -17,6 +17,11 @@ class TaskDetailViewController: UIViewController {
     // MARK: - LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
     }
     
+    private func setup() {
+        navigationItem.title = "Task Detail"
+        view.backgroundColor = .white
+    }
 }

@@ -10,21 +10,15 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    let appCoordinator = AppCoordinator()
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(frame: UIScreen.main.bounds)
-        let vc = TodoListViewController()
-        let navigationController = UINavigationController(rootViewController: vc)
-        vc.view.backgroundColor = .white
-        navigationController.navigationBar.prefersLargeTitles = true
-        navigationController.navigationBar.isTranslucent  = true
-        self.window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
-        window?.windowScene = windowScene
-        
-        
+        appCoordinator.window = UIWindow(frame: UIScreen.main.bounds)
+        appCoordinator.windowScene = windowScene
+        appCoordinator.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -33,4 +33,9 @@ extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
             break
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = TaskDetailViewController()
+        self.show(vc, sender: nil)
+    }
 }

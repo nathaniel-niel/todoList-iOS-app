@@ -13,7 +13,7 @@ class NewTaskViewController: UIViewController {
     
     // MARK: - PROPERTIES
     let category: [String] = ["High", "Medium", "Low"]
-    let newTaskViewModel = NewTaskViewModel()
+    var newTaskViewModel = NewTaskViewModel()
     
     
     // MARK: - UI COMPONENTS
@@ -30,8 +30,6 @@ class NewTaskViewController: UIViewController {
         textField.borderStyle = .roundedRect
         return textField
     }()
-    
-    
     
     // MARK: - LIFE CYCLE
     override func viewDidLoad() {

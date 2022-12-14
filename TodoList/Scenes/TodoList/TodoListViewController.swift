@@ -14,7 +14,8 @@ class TodoListViewController: UIViewController {
     let category: [String] = ["All","High", "Medium", "Low"]
     let disposeBag = DisposeBag()
     var filteredTask: [TodoListModel] = []
-    let todoListViewModel = TodoListViewModel()
+    var todoListViewModel = TodoListViewModel()
+    var routeAction: (() -> Void)?
     
     // MARK: - UI COMPONENTS
     let stackView: UIStackView = {
@@ -68,6 +69,8 @@ class TodoListViewController: UIViewController {
     }
     
     private func setup() {
+        view.backgroundColor = .white
+        
         navigationItem.title = "Todo List"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didAddButtonTapped))
         todoTableView.delegate = self
@@ -111,20 +114,7 @@ class TodoListViewController: UIViewController {
       }
     
     @objc private func didAddButtonTapped() {
-        let vc = NewTaskViewController()
-        vc.newTaskViewModel.isSucceedObject
-            .subscribe(onNext: {[unowned self] state in
-            if state {
-                spinner.startAnimating()
-                let priority = Priority(rawValue: self.segmentedControl.selectedSegmentIndex)
-                self.todoListViewModel.getTodoListData(by: priority)
-            } else {
-                spinner.startAnimating()
-                print("faile get new list data")
-            }
-        }).disposed(by: disposeBag)
-        
-        self.show(vc, sender: nil)
+        routeAction?()
     }
 }
 

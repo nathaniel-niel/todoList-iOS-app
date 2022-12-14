@@ -28,12 +28,14 @@ class BaseCoordinator: CoordinatorBuilder {
     func start(coordinator: CoordinatorBuilder) {
         childCoordinators.append(coordinator)
         coordinator.parentCoordinator = self
+        print(self)
         coordinator.start()
     }
     
     func didFinish(coordinator: CoordinatorBuilder) {
         if let coordinatorIndex = childCoordinators.firstIndex(where: {$0 === coordinator}) {
             childCoordinators.remove(at: coordinatorIndex)
+            print ("\(coordinator) has been removed")
         }
     }
     

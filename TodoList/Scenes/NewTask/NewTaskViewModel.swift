@@ -13,12 +13,17 @@ class NewTaskViewModel {
     let isSaveSucceed = PublishSubject<Bool>()
     let realmManager = RealmManager.shared
     
+    let onComplete = PublishSubject<Void>()
+    
     var isSucceedObject: Observable<Bool> {
         return isSaveSucceed.asObservable()
     }
     
+   
+    
     func addNewTaskList(task: Task) {
         realmManager.write(data: task)
         isSaveSucceed.onNext(true)
+        onComplete.onCompleted()
     }
 }

@@ -7,14 +7,14 @@
 
 import Foundation
 import UIKit
-import RxSwift
+
 
 class NewTaskViewController: UIViewController {
     
     // MARK: - PROPERTIES
     let category: [String] = ["High", "Medium", "Low"]
     var newTaskViewModel = NewTaskViewModel()
-    
+    var saveAction: ((Task) -> Void)?
     
     // MARK: - UI COMPONENTS
     let segmentedControl: UISegmentedControl = {

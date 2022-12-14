@@ -54,19 +54,20 @@ class TodoListViewController: UIViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        filteredTask.removeAll()
-        DispatchQueue.main.async {
-            self.todoTableView.reloadData()
-        }
-        spinner.startAnimating()
-        
-    }
-    
+//    override func viewWillAppear(_ animated: Bool) {
+//        filteredTask.removeAll()
+//        DispatchQueue.main.async {
+//            self.updateTableView()
+//        }
+//        
+//        
+//        
+//    }
+//    
     private func bindData() {
         spinner.startAnimating()
         todoListViewModel.filteredTaskObservable
-            .delay(.milliseconds(1000), scheduler: MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
             .subscribe { [weak self] tasks in
             self?.filteredTask = tasks
             self?.updateTableView()

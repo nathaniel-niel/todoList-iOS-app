@@ -67,10 +67,9 @@ class NewTaskViewController: UIViewController {
     }
     
     @objc private func didSaveButtonTapped() {
-        guard let priority = Priority.init(rawValue: segmentedControl.selectedSegmentIndex) else { return }
+        guard let priority = Priority.init(rawValue: segmentedControl.selectedSegmentIndex + 1) else { return }
         
         let task = Task(title: textField.text ?? "", priority: priority)
-//        taskSubject.onNext(task)
         newTaskViewModel.addNewTaskList(task: task)
         navigationController?.popViewController(animated: true)
     }

@@ -8,9 +8,9 @@
 import Foundation
 
 enum Priority: Int {
-    case High
-    case Medium
-    case low
+    case High = 1
+    case Medium = 2
+    case low = 3
 }
 
 struct Task {

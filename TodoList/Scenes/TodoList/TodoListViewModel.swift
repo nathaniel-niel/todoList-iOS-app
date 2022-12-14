@@ -21,7 +21,7 @@ class TodoListViewModel {
     func getTodoListData(by priority: Priority?) {
         let tempTask = realmManager.read()
         
-        if priority == nil {
+        if priority == nil || priority?.rawValue ?? 0 == 0 {
             tasksSubject.onNext(tempTask)
         } else {
             tasksSubject.onNext(tempTask.filter({$0.priority == priority}))

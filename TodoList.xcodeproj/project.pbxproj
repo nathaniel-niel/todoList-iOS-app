@@ -95,6 +95,7 @@
 		2D1360E129488A710036C80B /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
+				2D90FCE32949A8A600FE0054 /* RealmManager */,
 				2D90FCFB294A0BD500FE0054 /* Coordinator */,
 				2D90FCDC2949854600FE0054 /* Scenes */,
 				2D90FCDB2949852A00FE0054 /* Resrouces */,
@@ -118,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				2D90FCEE2949ED9200FE0054 /* TaskDetail */,
-				2D90FCE32949A8A600FE0054 /* RealmManager */,
 				2D90FCDE2949980900FE0054 /* NewTask */,
 				2D90FCDD2949854D00FE0054 /* TodoList */,
 			);
